@@ -1,4 +1,4 @@
-[
+export default  [
     {
     "team_name": "Arsenal",
     "nickname": "The Gunners",
