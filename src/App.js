@@ -7,9 +7,13 @@ function App() {
   const [teams, setTeams
   ] = useState(data);
 
+  const handleDelete = (team) => {
+    setTeams(teams.filter(t => t.team_name!== team));
+  }
+
   return (
     <>
-      {teams.map(team => <Team team={team} key={team.team_name} />)}
+      {teams.map(team => <Team handleDelete={handleDelete} team={team} key={team.team_name} />)}
     </>
 
 
