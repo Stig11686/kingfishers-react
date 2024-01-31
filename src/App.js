@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import data from './data/data.json';
 import Team from './components/Team';
+import AddTeam from './components/AddTeam';
 
 function App() {
   const [teams, setTeams
@@ -14,6 +15,7 @@ function App() {
   return (
     <>
       {teams.map(team => <Team handleDelete={handleDelete} team={team} key={team.team_name} />)}
+      <AddTeam />
     </>
 
 
