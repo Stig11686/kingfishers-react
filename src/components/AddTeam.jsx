@@ -1,22 +1,23 @@
-const AddTeam = () => {
-    const handleSubmit = () => {
-        console.log("submit");
-    }
+import { useState } from "react";
+
+const AddTeam = ({formValues, setFormValues, handleChange, handleSubmit}) => {
+    
+
 
   return (
-    <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+    <form onSubmit={(e) => handleSubmit(e)} style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
       <label htmlFor="name">Team Name: </label>
-      <input type="text" id="name" name="name" />
+      <input type="text" id="name" name="team_name" value={formValues.name} onChange={handleChange} />
       <label htmlFor="nickname">Nickname: </label>
-      <input type="text" id="nickname" name="nickname" />
+      <input type="text" id="nickname" name="nickname" value={formValues.nickname} onChange={handleChange}  />
       <label htmlFor="stadium">Stadium: </label>
-      <input type="text" id="stadium" name="stadium" />
+      <input type="text" id="stadium" name="stadium" value={formValues.stadium} onChange={handleChange}  />
       <label htmlFor="capacity">Capacity: </label>
-      <input type="text" id="capacity" name="capacity" />
+      <input type="text" id="capacity" name="capacity" value={formValues.capacity} onChange={handleChange}  />
       <label htmlFor="manager">Manager: </label>
-      <input type="text" id="manager" name="manager" />
+      <input type="text" id="manager" name="manager" value={formValues.manager} onChange={handleChange}  />
       <label htmlFor="crest_url">Crest Url: </label>
-      <input type="text" id="crest_url" name="crest_url" />
+      <input type="text" id="crest_url" name="crest_url" value={formValues.crest_url} onChange={handleChange}  />
       <label htmlFor="colours">Colours (Select multiple):</label>
       <div>
         <label>
